@@ -1,0 +1,26 @@
+1- Apresente o total de dias de atraso de um fatura vencida. Data de vencimento 03/04/2020 até 05/06/2020.
+SELECT DATEDIFF (DAY, ’03/04/2020’, ’05/06/2020’);
+
+2- Baseado na data de nascimento do cliente apresente qual é a sua idade - 14/07/1981.
+SELECT DATEDIFF (YEAR, ’14/07/1981’, GETDATE());
+
+3- Apresente a próxima data de vencimento de uma fatura – 04/04/2021.
+SELECT DATEADD(MONTH,1,’04/04/2021’);
+
+4- Apresenta a próxima data para a 2ª dose da vacina de Covid AstraZeneca – 28/04/2021 , próxima dose 90 dias depois.
+SELECT DATEADD(DAY,90,’28/04/2021’);
+
+5- Apresente a data da última prestação de um veículo em que o cliente comprou zero quilometro. 
+O cliente adquiriu o veículo em 2021 e comprou em 72 vezes.
+SELECT DATEADD(MONTH,72,’01/01/2021’);
+SELECT DATEADD(YEAR,6,’01/01/2021’);
+
+6- O cometa Halley passa próximo da Terra a cada 75-76 anos a ultima passagem dele próximo do nosso planeta 
+foi em 09/02/1986. Qual será a próxima data de passagem do Cometa?
+SELECT DATEADD(MONTH,912,’09/02/1986’);
+SELECT DATEADD(YEAR,76,’09/02/1986’);
+
+7- Baseado em sua data de aniversário mostre quantos Dias, Meses e Anos você já viveu.
+SELECT DATEDIFF(DAY, ’12/05/2004’, GETDATE());
+SELECT DATEDIFF(MONTH, ’12/05/2004’, GETDATE());
+SELECT DATEDIFF(YEAR, ’12/05/2004’, GETDATE());
