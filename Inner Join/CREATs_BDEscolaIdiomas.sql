@@ -1,7 +1,5 @@
 CREATE DATABASE bdEscolaIdiomas
 
-DROP DATABASE bdEscolaIdiomas
-
 CREATE TABLE tbAlunos (
 	 codAluno INT PRIMARY KEY IDENTITY (1,1)
 	,nomeAluno VARCHAR (50)
