@@ -3,13 +3,13 @@
 SELECT COUNT (codAluno) AS 'Quantidade de aunos que se matricularam em maio de 2016'
 FROM tbMatriculas WHERE dataMatricula BETWEEN '2016-01-05' AND '2016-31-05'
 
---Apresentar o nome dos alunos em ordem alfabética ao lado do nome das turmas em que estão matriculados
+--Apresentar o nome dos alunos em ordem alfabÃ©tica ao lado do nome das turmas em que estÃ£o matriculados
 SELECT nomeAluno AS 'Alunos', nomeTurma AS 'Turmas' FROM tbAlunos
 INNER JOIN tbMatriculas on tbAlunos.codAluno = tbMatriculas.codAluno
 INNER JOIN tbTurmas on tbTurmas.codTurma = tbMatriculas.codTurma
 ORDER BY nomeAluno ASC
 
---Apresentar o nome dos cursos e os horários em que eles são oferecidos
+--Apresentar o nome dos cursos e os horÃ¡rios em que eles sÃ£o oferecidos
 SELECT nomeCurso AS 'Cursos', horarioTurma AS 'Horario dos Curso/Turma' FROM tbCursos
 INNER JOIN tbTurmas on tbCursos.codCurso = tbTurmas.codCurso
 
@@ -17,16 +17,16 @@ INNER JOIN tbTurmas on tbCursos.codCurso = tbTurmas.codCurso
 SELECT naturalidadeAluno AS 'Estados dos Alunos', COUNT (naturalidadeAluno) AS 'Quantidade de alunos por Estado'
 FROM tbAlunos GROUP BY naturalidadeAluno
 
---Apresentar o nome dos alunos ao lado da data de matrícula no formato dd/mm/aaaa
+--Apresentar o nome dos alunos ao lado da data de matrÃ­cula no formato dd/mm/aaaa
 SELECT nomeAluno AS 'Alunos', CONVERT(VARCHAR(10), dataMatricula, 103) AS 'Data da Matricula'
 FROM tbAlunos INNER JOIN tbMatriculas on tbAlunos.codAluno = tbMatriculas.codAluno
 
---Apresentar os alunos cujo nome comece com A e que estejam matriculados no curso de inglês
-SELECT nomeAluno AS 'Nomes de alunos que começam com A matriculados no curso de ingles' FROM tbAlunos
+--Apresentar os alunos cujo nome comece com A e que estejam matriculados no curso de inglÃªs
+SELECT nomeAluno AS 'Nomes de alunos que comeÃ§am com A matriculados no curso de ingles' FROM tbAlunos
 INNER JOIN tbMatriculas on tbAlunos.codAluno = tbMatriculas.codAluno
 INNER JOIN tbTurmas on tbTurmas.codTurma = tbMatriculas.codTurma
 INNER JOIN tbCursos ON tbCursos.codCurso = tbTurmas.codCurso
-WHERE nomeAluno LIKE 'A%' AND nomeCurso = 'Inglês'
+WHERE nomeAluno LIKE 'A%' AND nomeCurso = 'InglÃªs'
 
 --Apresentar a quantidade de matriculas feitas no ano de 2016
 SELECT COUNT (dataMatricula)  AS 'Matriculas feitas em 2016' FROM tbMatriculas
